@@ -389,9 +389,9 @@ else:
         top_category = df_cat.iloc[0]['category'] if not df_cat.empty else "—"
 
         c1, c2, c3, c4 = st.columns(4)
-        c1.metric("Total Spent",       f"₹{total_spend:,.0f}")
+        c1.metric("Total Spent",       f"${total_spend:,.0f}")
         c2.metric("Transactions",      total_txns)
-        c3.metric("Avg per Transaction", f"₹{avg_txn:,.0f}")
+        c3.metric("Avg per Transaction", f"${avg_txn:,.0f}")
         c4.metric("Top Category",      top_category)
 
         st.markdown("<div style='height:1.5rem'></div>", unsafe_allow_html=True)
