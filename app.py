@@ -12,7 +12,7 @@ load_dotenv()
 
 # ── Page Config ────────────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="Macha Tracker",
+    page_title="ExpenseFlow",
     page_icon="💸",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -283,7 +283,7 @@ if not st.session_state.logged_in:
 
     st.markdown("""
     <div style="text-align:center; padding: 3rem 0 1rem;">
-        <div class="hero-title">💸 Macha Tracker</div>
+        <div class="hero-title">💸 ExpenseFlow</div>
         <div class="hero-sub" style="margin-top:0.5rem;">AI-powered expense intelligence</div>
     </div>
     """, unsafe_allow_html=True)
@@ -296,14 +296,14 @@ if not st.session_state.logged_in:
         if choice == "Register":
             with st.form("reg_form"):
                 new_name = st.text_input("Full Name", placeholder="Pragadeesh K")
-                new_user = st.text_input("Username", placeholder="macha")
+                new_user = st.text_input("Username", placeholder="username")
                 new_pw   = st.text_input("Password", type="password", placeholder="••••••••")
                 if st.form_submit_button("Create Account →", use_container_width=True):
                     if register_user(new_user, new_pw, new_name):
                         st.success("✅ Account created! Login now.")
         else:
             with st.form("login_form"):
-                u_id = st.text_input("Username", placeholder="macha")
+                u_id = st.text_input("Username", placeholder="username")
                 u_pw = st.text_input("Password", type="password", placeholder="••••••••")
                 if st.form_submit_button("Login →", use_container_width=True):
                     user = check_login(u_id, u_pw)
@@ -326,7 +326,7 @@ else:
         st.markdown(f"""
         <div style="padding: 1rem 0 1.5rem;">
             <div style="font-family:'Syne',sans-serif; font-weight:800; font-size:1.3rem; color:white;">
-                💸 Macha
+                💸 ExpenseFlow
             </div>
             <div style="font-size:0.7rem; color:var(--muted); margin-top:4px; font-family:'DM Mono',monospace;">
                 @{uid}
